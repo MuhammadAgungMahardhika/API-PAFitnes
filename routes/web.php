@@ -18,8 +18,7 @@ $router->get('/', function () use ($router) {
 });
 
 $router->get('/data', function () use ($router) {
-    $response = new \stdClass();
-    $response->tanggal = Carbon:now()->toDateString();
+    
     $results = app('db')->select("SELECT * FROM fitnes");
     return response()->json($results);
 });
