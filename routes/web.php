@@ -18,6 +18,7 @@ $router->get('/', function () use ($router) {
 });
 
 $router->get('/data', function () use ($router) {
+    $results = new \stdClass();
     $results = app('db')->select("SELECT * FROM fitnes");
     return response()->json($results);
 });
