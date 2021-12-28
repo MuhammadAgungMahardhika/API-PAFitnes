@@ -27,9 +27,9 @@ $router->get('/data', function () use ($router) {
 $router->post('/data/{id}/{nama_fitnes}', function ($id,$nama_fitnes) use ($router) {
     
 
-    $results = app('db')->insert("INSERT INTO fitnes (id, nama_fitnes)
+    $results_post = app('db')->insert("INSERT INTO fitnes (id, nama_fitnes)
 VALUES ($id,'$nama_fitnes')");
-    return response()->json($results);
+    return response()->json($results_post);
 });
 
 $router->post('/register', 'UserController@register');
