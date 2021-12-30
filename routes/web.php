@@ -29,7 +29,7 @@ $router->post('/post/{id}/{nama_fitnes}', function ($id,$nama_fitnes) use ($rout
 
     $results_post = app('db')->insert("INSERT INTO fitnes (id, nama_fitnes)
 VALUES ($id,'$nama_fitnes')");
-    return response()->json($results_post);
+    return response()->"BERHASIL";
 });
 
 $router->post('/register', 'UserController@register');
