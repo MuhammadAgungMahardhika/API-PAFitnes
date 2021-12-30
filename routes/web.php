@@ -24,12 +24,12 @@ $router->get('/data', function () use ($router) {
     return response()->json($results);
 });
 
-$router->post('/post/{id}/{nama_fitnes}', function ($id,$nama_fitnes) use ($router) {
+$router->post('/post/{id}/{namaFitnes}', function ($id,$namaFitnes) use ($router) {
     
 
     $results_post = app('db')->insert("INSERT INTO fitnes (id, nama_fitnes)
 VALUES ($id,'$nama_fitnes')");
-    return response()->"BERHASIL";
+    return 'id='.$id.'nama_fitnes='.$namaFitnes ;
 });
 
 $router->post('/register', 'UserController@register');
