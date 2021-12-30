@@ -28,7 +28,7 @@ $router->post('/post/{id}/{namaFitnes}', function ($id,$namaFitnes){
     
 
     $results_post = app('db')->insert("INSERT INTO fitnes (id, nama_fitnes)
-VALUES ($id,'$nama_fitnes')");
+VALUES ($id,'$namaFitnes')");
     return 'id='.$id.'nama_fitnes='.$namaFitnes ;
 });
 
