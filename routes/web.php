@@ -24,13 +24,13 @@ $router->get('/data', function () use ($router) {
     return response()->json($results);
 });
 
-// $router->post('/data/{id}/{nama_fitnes}', function ($id,$nama_fitnes) use ($router) {
+// $router->post('/post/{id}/{nama_fitnes}', function ($id,$nama_fitnes) use ($router) {
     
 
-//     $results_post = app('db')->insert("INSERT INTO fitnes (id, nama_fitnes)
-// VALUES ($id,'$nama_fitnes')");
-//     return response()->json($results_post);
-// });
+    $results_post = app('db')->insert("INSERT INTO fitnes (id, nama_fitnes)
+VALUES ($id,'$nama_fitnes')");
+    return response()->json($results_post);
+});
 
 $router->post('/register', 'UserController@register');
 $router->post('/login','AuthController@login');
