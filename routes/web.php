@@ -24,8 +24,7 @@ $router->get('/data', function () use ($router) {
     return response()->json($results);
 });
 
-$router->post('/post/id?={id}/nama_fitnes?={namaFitnes}', function ($id,$namaFitnes){
-    
+$router->post('/post/{id}/[/{namaFitnes}]', function ($id,$namaFitnes = null){
 
     $results_post = app('db')->insert("INSERT INTO fitnes (id, nama_fitnes)
 VALUES ($id,'$namaFitnes')");
