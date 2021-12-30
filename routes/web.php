@@ -34,7 +34,7 @@ $router->post('past', function (Illuminate\Http\Request $request) {
        
         $id = $request->input('id');
      $nama_fitnes = $request->input('nama_fitnes');
-        $result = DB::insert("INSERT INTO fitnes (id,nama_fitnes) VALUES (?)",[$id],[$nama_fitnes]);
+        $result = DB::insert("INSERT INTO fitnes (id,nama_fitnes) VALUES (?)",[$id],["$nama_fitnes"]);
         return ($result)? "wow":"Noo";
     });
 
