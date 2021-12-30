@@ -33,8 +33,8 @@ VALUES ($id,'$namaFitnes')");
 $router->post('past', function (Illuminate\Http\Request $request) {
        
         $id = $request->input('id');
-        $namaFitnes = $request->input('nama_fitnes');
-        $result = DB::insert("INSERT INTO fitnes (id,nama_fitnes) VALUES ($id,'$namaFitnes')");
+        $nama_fitnes = $request->input('nama_fitnes');
+        $result = DB::insert("INSERT INTO fitnes (id,nama_fitnes) VALUES ($id,$nama_fitnes)");
         return ($result)? "wow":"Noo";
     });
 
