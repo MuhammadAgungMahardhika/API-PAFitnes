@@ -30,6 +30,13 @@ VALUES ($id,'$namaFitnes')");
     return 'id='.$id.'nama_fitnes='.$namaFitnes ;
 });
 
+$router->post('insertGender', function (Illuminate\Http\Request $request) {
+       
+        $id = $request->input('id');
+        $result = DB::insert("INSERT INTO fitnes (id) VALUES (?)",[$id]);
+        return ($result)? "wow":"Noo";
+    });
+
 $router->post('/register', 'UserController@register');
 $router->post('/login','AuthController@login');
 
