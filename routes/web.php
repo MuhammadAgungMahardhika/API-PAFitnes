@@ -17,20 +17,15 @@ $router->get('/', function () use ($router) {
     return ["Hello Hai..!!!"];
 });
 
+//menampilkan data fitnes
 $router->get('/data', function () use ($router) {
 
     $results = app('db')->select("SELECT * FROM fitnes");
     return response()->json($results);
 });
 
-$router->post('/post/{id}/{namaFitnes}', function ($id,$namaFitnes){
-
-    $results_post = app('db')->insert("INSERT INTO fitnes (id, nama_fitnes)
-VALUES ($id,'$namaFitnes')");
-    return 'id='.$id.'nama_fitnes='.$namaFitnes ;
-});
-
-$router->post('past', function (Illuminate\Http\Request $request) {
+//menambah data fitnes
+$router->post('post', function (Illuminate\Http\Request $request) {
        
         $id = $request->input('id');
         $nama_fitnes = $request->input('nama_fitnes');
