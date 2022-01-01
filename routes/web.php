@@ -42,6 +42,16 @@ $router->post('post', function (Illuminate\Http\Request $request) {
         return ($result)? "wow":"Noo";
     });
 
+//menambah booking
+$router->post('book', function (Illuminate\Http\Request $request) {
+       
+        $id_fitnes = $request->input('id');
+        $id_user = $request->input('id_user');
+        $result = DB::insert("INSERT INTO detail_fitnes (id,id_user)
+        VALUES ($id,$id_user)");
+        return ($result)? "wow":"Noo";
+    });
+
 $router->post('/register', 'UserController@register');
 $router->post('/login','AuthController@login');
 
