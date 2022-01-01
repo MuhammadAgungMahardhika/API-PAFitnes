@@ -47,10 +47,14 @@ $router->post('book', function (Illuminate\Http\Request $request) {
        
         $id_fitnes = $request->input('id_fitnes');
         $id_user = $request->input('id_user');
+    
         $result = DB::insert("INSERT INTO detail_booking (id_fitnes,id_user)
         VALUES ($id_fitnes,$id_user)");
+       
         return ($result)? "wow":"Noo";
     });
+
+
 
 $router->post('/register', 'UserController@register');
 $router->post('/login','AuthController@login');
