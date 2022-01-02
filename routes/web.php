@@ -25,7 +25,7 @@ $router->get('/data', function () use ($router) {
 });
 
 //menambah data fitnes
-$router->post('post', function (Illuminate\Http\Request $request) {
+$router->post('/post', function (Illuminate\Http\Request $request) {
        
         $id = $request->input('id');
         $nama_fitnes = $request->input('nama_fitnes');
