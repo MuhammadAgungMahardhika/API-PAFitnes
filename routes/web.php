@@ -25,7 +25,7 @@ $router->get('/logout', 'AuthController@logout')
 });
 
 //menambah data fitnes2
- $router->post('/postFitnes2', 'ExampleController@addFitnes');
+//  $router->post('/postFitnes2', 'ExampleController@addFitnes');
        
 //menambah data fitnes
 $router->post('/postFitnes', function (Illuminate\Http\Request $request) {
