@@ -37,7 +37,7 @@ $router->post('/postFitnes', function (Illuminate\Http\Request $request){
         VALUES ($id,'$nama_fitnes','$alamat_fitnes','$fasilitas','$harga_perbulan','$no_fitnes','$jam_buka','$gambar_fitnes')");
   
     return ($result)? "wow":"Noo";
-};
+});
 
 
 
