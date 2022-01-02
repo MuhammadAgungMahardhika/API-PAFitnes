@@ -17,7 +17,7 @@ class ExampleController extends Controller
     public function fitnes(){
          $results = app('db')->select("SELECT * FROM fitnes");
         
-        if($result!=null){
+        if($results){
             $this->notif();
             
         }
