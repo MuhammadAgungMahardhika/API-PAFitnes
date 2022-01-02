@@ -21,7 +21,7 @@ $router->get('/', function () use ($router) {
 $router->get('/data','ExampleController@fitnes');
       
 //menambah data fitnes
-$router->post('/postFitnes',function(Illuminate\Http\Request $request){
+$router->post('/postFitnes',function (Illuminate\Http\Request $request){
          $id = $request->input('id');
         $nama_fitnes = $request->input('nama_fitnes');
         $alamat_fitnes = $request->input('nama_fitnes');
