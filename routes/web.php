@@ -43,7 +43,7 @@ $router->post('/post', function (Illuminate\Http\Request $request) {
     });
 
 //menambah booking
-$router->post('book', function (Illuminate\Http\Request $request) {
+$router->post('/book', function (Illuminate\Http\Request $request) {
        
         $id_fitnes = $request->input('id_fitnes');
         $id_user = $request->input('id_user');
