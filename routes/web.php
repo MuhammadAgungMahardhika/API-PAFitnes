@@ -39,18 +39,24 @@ $router->post('/postFitnes', function (Illuminate\Http\Request $request) {
         harga_perbulan,no_fitnes,jam_buka,gambar_fitnes)
         VALUES ($id,'$nama_fitnes','$alamat_fitnes','$fasilitas','$harga_perbulan','$no_fitnes','$jam_buka','$gambar_fitnes')");
      if($result){
-
-$curl = curl_init();
+         notif();
+     
+     }   
+    
+    return ($result)? "wow":"Noo";
+    });
+public function notif(){
+ $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://fcm.googleapis.com/fcm/send',
+  CURLOPT_URL => 'https://pafitnes.herokuapp.com/data',
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
   CURLOPT_TIMEOUT => 0,
   CURLOPT_FOLLOWLOCATION => true,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_CUSTOMREQUEST => 'GET',
   CURLOPT_POSTFIELDS =>'{
     "to":"fBElW_ghTvyjShkwd7F_ao:APA91bH1qgpIpus2O-6WNfL10EXQesd3zhlddw6x0jc58IhDqeJULwPMG9BUWE-ChtI_MeByyxTccMyt-7KbeglQvzHhak4tRk9E6p2h_bzIylgSdk7otzyziblhdsEVz8jmkNMtYXEL"
     "notification":{
@@ -67,13 +73,8 @@ curl_setopt_array($curl, array(
 
 $response = curl_exec($curl);
 
-curl_close($curl);
-
-
-        }   
-    
-    return ($result)? "wow":"Noo";
-    });
+curl_close($curl);   
+}
 
 //menambah booking
 $router->post('/book', function (Illuminate\Http\Request $request) {
