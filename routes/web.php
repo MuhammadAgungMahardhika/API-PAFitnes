@@ -18,12 +18,15 @@ $router->get('/', function () use ($router) {
 });
 
 //menampilkan data fitnes
-$router->get('/data', function () use ($router) {
+$router->get('/logout', 'AuthController@logout') 
 
     $results = app('db')->select("SELECT * FROM fitnes");
     return response()->json($results);
 });
 
+//menambah data fitnes2
+ $router->post('/postFitnes2', 'ExampleController@addFitnes');
+       
 //menambah data fitnes
 $router->post('/postFitnes', function (Illuminate\Http\Request $request) {
         $id = $request->input('id');
