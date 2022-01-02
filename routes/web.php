@@ -18,13 +18,8 @@ $router->get('/', function () use ($router) {
 });
 
 //menampilkan data fitnes
-$router->get('/data', function () use ($router) {
-    $results = app('db')->select("SELECT * FROM fitnes");
-    return response()->json($results);
-});
-
-
-       
+$router->get('/data','ExampleController@ fitnes');
+      
 //menambah data fitnes
 $router->post('/postFitnes', function (Illuminate\Http\Request $request) {
         $id = $request->input('id');
