@@ -18,7 +18,7 @@ class ExampleController extends Controller
          $results = app('db')->select("SELECT * FROM fitnes");
         
         if($result){
-            notif();
+            $this->notif();
         }
     return response()->json($results);
     }
