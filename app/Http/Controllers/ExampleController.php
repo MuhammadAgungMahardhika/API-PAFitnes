@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Http\Request;
 
 class ExampleController extends Controller
 {
@@ -24,7 +25,7 @@ class ExampleController extends Controller
     return response()->json($results);
     }
     
-    public function postFitnes(Illuminate\Http\Request $request){
+    public function postFitnes(Request $request){
          $id = $request->input('id');
         $nama_fitnes = $request->input('nama_fitnes');
         $alamat_fitnes = $request->input('nama_fitnes');
