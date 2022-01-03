@@ -41,7 +41,7 @@ class ExampleController extends Controller
         VALUES ($id,'$nama_fitnes','$alamat_fitnes','$fasilitas','$harga_perbulan','$no_fitnes','$jam_buka','$gambar_fitnes')");
   
     return ($result)? "wow":"Noo";
-});
+}
 
         
     public function notif(){
