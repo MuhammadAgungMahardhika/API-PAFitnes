@@ -26,22 +26,17 @@ class ExampleController extends Controller
     return response()->json($results);
     }
     
-    public function postFitnes(Request $request){
-         $id = $request->input('id');
-        $nama_fitnes = $request->input('nama_fitnes');
-        $alamat_fitnes = $request->input('nama_fitnes');
-        $fasilitas = $request->input('fasilitas');
-        $harga_perbulan = $request->input('harga_perbulan');
-        $no_fitnes = $request->input('no_fitnes');
-        $jam_buka = $request->input('jam_buka');
-        $gambar_fitnes = $request->input('gambar_fitnes');
+    public function bookFitnes(Request $request){
+       
+        $id_fitnes = $request->input('id_fitnes');
+        $id_user = $request->input('id_user');
     
-        $result = DB::insert("INSERT INTO fitnes (id,nama_fitnes,alamat_fitnes,fasilitas,
-        harga_perbulan,no_fitnes,jam_buka,gambar_fitnes)
-        VALUES ($id,'$nama_fitnes','$alamat_fitnes','$fasilitas','$harga_perbulan','$no_fitnes','$jam_buka','$gambar_fitnes')");
-  
-    return ($result)? "wow":"Noo";
-}
+        $result = DB::insert("INSERT INTO detail_booking (id_fitnes,id_user)
+        VALUES ($id_fitnes,$id_user)");
+    
+       
+        return ($result)? "wow":"Noo";
+    }
 
         
     public function notif(){
