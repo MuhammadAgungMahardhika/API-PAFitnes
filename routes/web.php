@@ -20,7 +20,7 @@ $router->get('/', function () use ($router) {
 //menampilkan data fitnes
 $router->get('/data','ExampleController@fitnes');
 
-//menampilkan data fitnes
+//menambah data fitnes
 $router->post('/postFitnes','ExampleController@postFitnes');
 
 //menambah data fitnes
@@ -41,7 +41,8 @@ $router->post('/postFitnes', function (Illuminate\Http\Request $request){
     return ($result)? "wow":"Noo";
 });
 
-
+//menambah booking
+$router->post('/bookFitnes','ExampleController@bookFitnes');
 
 //menambah booking
 $router->post('/book', function (Illuminate\Http\Request $request) {
