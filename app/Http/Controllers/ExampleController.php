@@ -1,6 +1,6 @@
 <?php
-
 namespace App\Http\Controllers;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -26,15 +26,14 @@ class ExampleController extends Controller
     return response()->json($results);
     }
     
-    public function bookFitnes(Request $request){
+    public function bookFitnes(Illuminate\Http\Request $request){
        
         $id_fitnes = $request->input('id_fitnes');
         $id_user = $request->input('id_user');
     
         $result = DB::insert("INSERT INTO detail_booking (id_fitnes,id_user)
         VALUES ($id_fitnes,$id_user)");
-    
-       
+        
         return ($result)? "wow":"Noo";
     }
 
