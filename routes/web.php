@@ -51,7 +51,10 @@ $router->post('/book', function (Illuminate\Http\Request $request) {
         $result = DB::insert("INSERT INTO detail_booking (id_fitnes,id_user)
         VALUES ($id_fitnes,$id_user)");
     
-       
+    
+        if($result){
+        $this->'ExampleController@notif';
+        }      
         return ($result)? "wow":"Noo";
     });
 
