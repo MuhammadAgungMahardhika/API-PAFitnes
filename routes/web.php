@@ -43,7 +43,7 @@ $router->post('/postFitnes', function (Illuminate\Http\Request $request){
 });
 
 //menambah booking
-$router->post('/bookFitnes','ExampleController@bookFitnes');
+// $router->post('/bookFitnes','ExampleController@bookFitnes');
 
 //menambah booking
 $router->post('/book', function (Illuminate\Http\Request $request) {
@@ -53,8 +53,10 @@ $router->post('/book', function (Illuminate\Http\Request $request) {
     
         $result = DB::insert("INSERT INTO detail_booking (id_fitnes,id_user)
         VALUES ($id_fitnes,$id_user)");
-     
-        return ($result)? "wow":"Noo";
+    
+    $input = $request->all();
+
+    return response()->json($input);
     });
 
 
