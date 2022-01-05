@@ -35,8 +35,11 @@ $router->post('/postFitnes', function (Illuminate\Http\Request $request){
         $result = DB::insert("INSERT INTO fitnes (id,nama_fitnes,alamat_fitnes,fasilitas,
         harga_perbulan,no_fitnes,jam_buka,gambar_fitnes)
         VALUES ($id,'$nama_fitnes','$alamat_fitnes','$fasilitas','$harga_perbulan','$no_fitnes','$jam_buka','$gambar_fitnes')");
+    
+    $input = $request->all();
+    
   
-    return response()->json($result);
+    return response()->json($input);
 });
 
 //menambah booking
