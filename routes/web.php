@@ -20,6 +20,8 @@ $router->get('/', function () use ($router) {
 //menampilkan data fitnes
 $router->get('/data','ExampleController@fitnes');
 
+//menambah data fitnes tes
+$router->post('/posts', 'PostsController@store');
 
 //menambah data fitnes
 $router->post('/postFitnes', function (Illuminate\Http\Request $request){
