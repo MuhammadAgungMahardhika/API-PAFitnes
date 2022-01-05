@@ -20,8 +20,6 @@ $router->get('/', function () use ($router) {
 //menampilkan data fitnes
 $router->get('/data','ExampleController@fitnes');
 
-//menambah data fitnes tes
-$router->post('/posts', 'PostsController@store');
 
 //menambah data fitnes
 $router->post('/postFitnes', function (Illuminate\Http\Request $request){
@@ -38,7 +36,7 @@ $router->post('/postFitnes', function (Illuminate\Http\Request $request){
         harga_perbulan,no_fitnes,jam_buka,gambar_fitnes)
         VALUES ($id,'$nama_fitnes','$alamat_fitnes','$fasilitas','$harga_perbulan','$no_fitnes','$jam_buka','$gambar_fitnes')");
   
-    return ($result)? "wow":"Noo";
+    return response()->json($result);
 });
 
 //menambah booking
