@@ -19,9 +19,9 @@ class ExampleController extends Controller
     public function fitnes(Request $request){
             $query = $request->input('query');
         if($query){
-         $result = app('db')->select("SELECT * FROM fitnes 
-WHERE nama_fitnes LIKE '%$query%'");
-
+            $result = app('db')->select("SELECT * FROM fitnes 
+            WHERE nama_fitnes LIKE '%$query%'");
+            return $result;
         }else{
            $results = app('db')->select("SELECT * FROM fitnes"); 
         }
