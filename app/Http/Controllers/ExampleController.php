@@ -34,7 +34,8 @@ class ExampleController extends Controller
         $result = app('db')->insert("INSERT INTO detail_booking (id_fitnes,id_user)
         VALUES ($id_fitnes,'$id_user')");
         
-        return response()->json($result);
+        $input = $request->all();
+        return response()->json($input);
     }
 
         
