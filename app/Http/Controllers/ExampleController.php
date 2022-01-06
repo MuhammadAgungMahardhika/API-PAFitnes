@@ -30,9 +30,6 @@ class ExampleController extends Controller
         VALUES ($id_fitnes,'$id_user')");
          $input = $request->all();
     
-          notif();
-
-       
         return response()->json($input);
     }
 
