@@ -43,7 +43,7 @@ $router->post('/postFitnes', function (Illuminate\Http\Request $request){
 });
 
 //menambah booking
-// $router->post('/bookFitnes','ExampleController@bookFitnes');
+$router->post('/bookFitnes','ExampleController@bookFitnes');
 
 //menambah booking
 $router->post('/book', function (Illuminate\Http\Request $request) {
