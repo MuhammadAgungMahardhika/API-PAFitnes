@@ -39,9 +39,9 @@ class ExampleController extends Controller
     
         $result = app('db')->select("SELECT * FROM fitnes 
 WHERE nama_fitnes LIKE '%$search%'");
-         $input = $request->all($result);
+      
     
-        return response()->json($input);
+        return response()->json($result);
     }
         
     public function notif(){
