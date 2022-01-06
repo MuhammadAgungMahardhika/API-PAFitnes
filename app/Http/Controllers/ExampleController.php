@@ -33,6 +33,16 @@ class ExampleController extends Controller
         return response()->json($input);
     }
 
+    public function search(Request $request){
+      
+        $search = $request->input('search');
+    
+        $result = app('db')->select("SELECT * FROM fitnes 
+WHERE nama_fitnes LIKE '%$search%'");
+         $input = $request->all();
+    
+        return response()->json($result);
+    }
         
     public function notif(){
         $curl = curl_init();
