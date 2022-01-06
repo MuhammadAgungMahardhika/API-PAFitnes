@@ -17,12 +17,7 @@ class ExampleController extends Controller
     }
     
     public function fitnes(){
-         $results = app('db')->select("SELECT * FROM fitnes");
-        
-        if($results){
-            $this->notif();
-            
-        }
+     $results = app('db')->select("SELECT * FROM fitnes"); 
     return response()->json($results);
     }
     
@@ -34,6 +29,10 @@ class ExampleController extends Controller
         $result = app('db')->insert("INSERT INTO detail_booking (id_fitnes,id_user)
         VALUES ($id_fitnes,'$id_user')");
         
+         if($results){
+            $this->notif();
+            
+        }
         $input = $request->all();
         return response()->json($input);
     }
