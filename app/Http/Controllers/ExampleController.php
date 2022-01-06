@@ -39,7 +39,7 @@ class ExampleController extends Controller
     
         $result = app('db')->select("SELECT * FROM fitnes 
 WHERE nama_fitnes LIKE '%$search%'");
-         $input = $request->all();
+         $input = $request->all($result);
     
         return response()->json($input);
     }
