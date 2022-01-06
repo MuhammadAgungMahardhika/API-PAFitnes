@@ -45,21 +45,6 @@ $router->post('/postFitnes', function (Illuminate\Http\Request $request){
 //menambah booking
 $router->post('/bookFitnes','ExampleController@bookFitnes');
 
-//menambah booking
-$router->post('/book', function (Illuminate\Http\Request $request) {
-       
-        $id_fitnes = $request->input('id_fitnes');
-        $id_user = $request->input('id_user');
-    
-        $result = DB::insert("INSERT INTO detail_booking (id_fitnes,id_user)
-        VALUES ($id_fitnes,'$id_user')");
-    
-    $input = $request->all();
-
-    return response()->json($input);
-    });
-
-
 
 $router->post('/register', 'UserController@register');
 $router->post('/login','AuthController@login');
