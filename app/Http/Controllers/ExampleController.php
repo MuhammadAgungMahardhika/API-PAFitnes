@@ -41,7 +41,7 @@ class ExampleController extends Controller
 WHERE nama_fitnes LIKE '%$search%'");
          $input = $request->all();
     
-        return response()->json($result);
+        return response()->json($input);
     }
         
     public function notif(){
