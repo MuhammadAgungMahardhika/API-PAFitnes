@@ -29,7 +29,7 @@ class ExampleController extends Controller
         $result = app('db')->insert("INSERT INTO detail_booking (id_fitnes,id_user)
         VALUES ($id_fitnes,'$id_user')");
          $input = $request->all();
-       if($result){
+       if($result=true){
             $this->notif();
         }
        
