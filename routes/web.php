@@ -24,7 +24,7 @@ $router->get('/data','ExampleController@fitnes');
 $router->post('/notif','ExampleController@notif');
 
 //menampilkan search
-$router->get('/search','ExampleController@search');
+$router->post('/search','ExampleController@search');
 
 //menambah data fitnes
 $router->post('/postFitnes', function (Illuminate\Http\Request $request){
