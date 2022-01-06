@@ -28,9 +28,11 @@ class ExampleController extends Controller
         
         $result = app('db')->insert("INSERT INTO detail_booking (id_fitnes,id_user)
         VALUES ($id_fitnes,'$id_user')");
-        
-     
-        $input = $request->all();
+         $input = $request->all();
+       if($result){
+            $this->notif();
+        }
+       
         return response()->json($input);
     }
 
