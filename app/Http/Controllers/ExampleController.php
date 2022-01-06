@@ -35,10 +35,10 @@ class ExampleController extends Controller
 
     public function search(Request $request){
       
-        $search = $request->input('search');
+        $query = $request->input('query');
     
         $result = app('db')->select("SELECT * FROM fitnes 
-WHERE nama_fitnes LIKE '%$search%'");
+WHERE nama_fitnes LIKE '%$query%'");
       
     
         return response()->json($result);
