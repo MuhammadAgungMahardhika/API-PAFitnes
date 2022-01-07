@@ -50,6 +50,9 @@ $router->post('/postFitnes', function (Illuminate\Http\Request $request){
 //menambah booking
 $router->post('/bookFitnes','ExampleController@bookFitnes');
 
+//mengambil data kelas
+$router->get('/getClass','ExampleController@getClass');
+
 
 $router->post('/register', 'UserController@register');
 $router->post('/login','AuthController@login');
