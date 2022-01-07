@@ -25,12 +25,19 @@ class ExampleController extends Controller
       
         $id_fitnes = $request->input('id_fitnes');
         $id_user = $request->input('id_user');
+        $tanggal_booking = $request->input('tanggal_booking');
         
-        $result = app('db')->insert("INSERT INTO detail_booking (id_fitnes,id_user)
-        VALUES ($id_fitnes,'$id_user')");
+        $result = app('db')->insert("INSERT INTO detail_booking (id_fitnes,id_user,tanggal_booking)
+        VALUES ($id_fitnes,'$id_user','$tanggal_booking')");
+        
          $input = $request->all();
     
         return response()->json($input);
+    }
+    
+      public function getClass(){
+      $results = app('db')->select("SELECT * FROM detail_fitnes"); 
+    return response()->json($results);
     }
 
     public function search(Request $request){
