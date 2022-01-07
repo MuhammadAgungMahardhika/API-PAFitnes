@@ -35,8 +35,13 @@ class ExampleController extends Controller
         return response()->json($input);
     }
     
-      public function getClass(){
-      $results = app('db')->select("SELECT * FROM detail_fitnes"); 
+      public function getClass(Request $request){
+       $id_user = $request->input('id_user');
+      $results = app('db')->select("SELECT id_booking,id_fitnes,id_user,tanggal_booking,nama_fitnes,harga_perbulan FROM detail_booking 
+      JOIN fitnes on detail_booking.id_fitnes = fitnes.id 
+        WHERE id_user = ' $id_user' "); 
+          
+          
     return response()->json($results);
     }
 
