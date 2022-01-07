@@ -51,7 +51,7 @@ $router->post('/postFitnes', function (Illuminate\Http\Request $request){
 $router->post('/bookFitnes','ExampleController@bookFitnes');
 
 //mengambil data kelas
-$router->post('/getClass','ExampleController@getClass');
+$router->get('/getClass','ExampleController@getClass');
 
 
 $router->post('/register', 'UserController@register');
