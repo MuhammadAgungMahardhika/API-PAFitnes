@@ -58,7 +58,7 @@ WHERE nama_fitnes LIKE '%$query%' ORDER BY nama_fitnes ASC");
         
         if($token){
         return $token;
-        }else if(!$token){
+        }else if($token==null){
           $token = "fBElW_ghTvyjShkwd7F_ao:APA91bH1qgpIpus2O-6WNfL10EXQesd3zhlddw6x0jc58IhDqeJULwPMG9BUWE-ChtI_MeByyxTccMyt-7KbeglQvzHhak4tRk9E6p2h_bzIylgSdk7otzyziblhdsEVz8jmkNMtYXEL";
             return $token;
         }
