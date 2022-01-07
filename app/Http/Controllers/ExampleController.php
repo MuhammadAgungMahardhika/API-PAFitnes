@@ -40,7 +40,7 @@ class ExampleController extends Controller
 
       $results = app('db')->select("SELECT id_booking,id_fitnes,id_user,tanggal_booking,nama_fitnes,alamat_fitnes,harga_perbulan FROM detail_booking 
       JOIN fitnes on detail_booking.id_fitnes = fitnes.id 
-        WHERE id_user = '$id_user' ORDER BY id_booking ASC"); 
+        WHERE id_user = '$id_user' ORDER BY id_booking DESC"); 
           
     return response()->json($results);
     }
