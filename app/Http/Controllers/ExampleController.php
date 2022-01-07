@@ -40,7 +40,7 @@ class ExampleController extends Controller
 
       $results = app('db')->select("SELECT id_booking,id_fitnes,id_user,tanggal_booking,nama_fitnes,alamat_fitnes,harga_perbulan FROM detail_booking 
       JOIN fitnes on detail_booking.id_fitnes = fitnes.id 
-        WHERE id_user = '$id_user' "); 
+        WHERE id_user = '$id_user' ORDER BY nama_fitnes ASC"); 
           
     return response()->json($results);
     }
@@ -50,7 +50,7 @@ class ExampleController extends Controller
         $query = $request->input('query');
     
         $result = app('db')->select("SELECT * FROM fitnes 
-WHERE nama_fitnes LIKE '%$query%' ORDER BY nama_fitnes DESC");
+WHERE nama_fitnes LIKE '%$query%' ORDER BY nama_fitnes ASC");
       
     
         return response()->json($result);
