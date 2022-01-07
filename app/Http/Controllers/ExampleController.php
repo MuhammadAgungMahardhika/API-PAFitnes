@@ -41,7 +41,6 @@ class ExampleController extends Controller
       JOIN fitnes on detail_booking.id_fitnes = fitnes.id 
         WHERE id_user = ' $id_user' "); 
           
-          
     return response()->json($results);
     }
 
