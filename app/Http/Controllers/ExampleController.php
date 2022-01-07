@@ -50,7 +50,7 @@ class ExampleController extends Controller
         $query = $request->input('query');
     
         $result = app('db')->select("SELECT * FROM fitnes 
-WHERE nama_fitnes LIKE '%$query%' ORDER BY nama_fitnes ASC");
+WHERE nama_fitnes LIKE '%$query%' ORDER BY nama_fitnes DESC");
       
     
         return response()->json($result);
