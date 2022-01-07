@@ -52,7 +52,14 @@ WHERE nama_fitnes LIKE '%$query%' ORDER BY nama_fitnes ASC");
         return response()->json($result);
     }
         
-    public function notif(){
+    public function notif(Request $request){
+        
+        $token = $request->input('query');
+        
+        if(!$token){
+        $token = "fBElW_ghTvyjShkwd7F_ao:APA91bH1qgpIpus2O-6WNfL10EXQesd3zhlddw6x0jc58IhDqeJULwPMG9BUWE-ChtI_MeByyxTccMyt-7KbeglQvzHhak4tRk9E6p2h_bzIylgSdk7otzyziblhdsEVz8jmkNMtYXEL";
+        }
+        
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
@@ -65,7 +72,7 @@ WHERE nama_fitnes LIKE '%$query%' ORDER BY nama_fitnes ASC");
           CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
           CURLOPT_CUSTOMREQUEST => 'POST',
           CURLOPT_POSTFIELDS =>'{
-            "to":"fBElW_ghTvyjShkwd7F_ao:APA91bH1qgpIpus2O-6WNfL10EXQesd3zhlddw6x0jc58IhDqeJULwPMG9BUWE-ChtI_MeByyxTccMyt-7KbeglQvzHhak4tRk9E6p2h_bzIylgSdk7otzyziblhdsEVz8jmkNMtYXEL"
+            "to":'.$token.'
             "notification":{
             "title": "Succes booking class",
             "body": "You have succesfull booking the class"
