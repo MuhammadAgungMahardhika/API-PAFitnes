@@ -22,6 +22,10 @@ $router->get('/data','ExampleController@fitnes');
 
 //menampilkan notifikasi
 $router->post('/notif','ExampleController@notif');
+    
+ //menampilkan lokasi fitnes
+$router->get('/locationFitnes','ExampleController@locationFitnes');  
+   
 
 //menampilkan search
 $router->post('/search','ExampleController@search');
