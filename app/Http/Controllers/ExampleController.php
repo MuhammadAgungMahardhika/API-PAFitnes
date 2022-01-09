@@ -44,6 +44,13 @@ class ExampleController extends Controller
           
     return response()->json($results);
     }
+    
+     public function locationFitnes(){
+      $results = app('db')->select("SELECT id_location,id_fitnes,nama_fitnes,alamat_fitnes,jam_buka,lat,lng 
+FROM location_fitnes JOIN fitnes on location_fitnes.id_fitnes = fitnes.id
+"); 
+    return response()->json($results);
+    }
 
     public function search(Request $request){
       
