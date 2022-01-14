@@ -79,7 +79,9 @@ WHERE nama_fitnes LIKE '%$query%' ORDER BY nama_fitnes ASC");
     }
         
     public function notif(Request $request){
-         $title = $request->input('title');
+        $topics = $request->input('topics');
+        $title = $request->input('title');
+        $body = $request->input('body');
       
         $curl = curl_init();
 
@@ -93,10 +95,10 @@ WHERE nama_fitnes LIKE '%$query%' ORDER BY nama_fitnes ASC");
           CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
           CURLOPT_CUSTOMREQUEST => 'POST',
           CURLOPT_POSTFIELDS =>'{
-            "to":"/topics/Update"
+            "to":"/topics/'."$topics".'"
             "notification":{
             "title": "'."$title".'",
-            "body": "tes"
+            "body": "'."$body".'"
         }
         }',
           CURLOPT_HTTPHEADER => array(
