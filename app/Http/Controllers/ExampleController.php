@@ -78,8 +78,10 @@ WHERE nama_fitnes LIKE '%$query%' ORDER BY nama_fitnes ASC");
         return response()->json($result);
     }
         
-    public function notif(){
- 
+    public function notif(Request $request){
+         $title = $request->input('title');
+        $body = $request->input('body');
+       
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
@@ -94,8 +96,8 @@ WHERE nama_fitnes LIKE '%$query%' ORDER BY nama_fitnes ASC");
           CURLOPT_POSTFIELDS =>'{
             "to":"/topics/Update"
             "notification":{
-            "title": "Update now!",
-            "body": "Click to update Pafitnes"
+            "title": $title,
+            "body": $body
         }
         }',
           CURLOPT_HTTPHEADER => array(
