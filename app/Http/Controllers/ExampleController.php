@@ -79,7 +79,7 @@ WHERE nama_fitnes LIKE '%$query%' ORDER BY nama_fitnes ASC");
     }
         
     public function notif(Request $request){
-        $to = $request->input('to');
+    
         $title = $request->input('title');
         $body = $request->input('body');
       
