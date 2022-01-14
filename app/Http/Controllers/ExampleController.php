@@ -50,9 +50,10 @@ class ExampleController extends Controller
         $title = $request->input('title');
         $message = $request->input('message');
         $date = $request->input('date');
+        $user = $request->input('user');
         
-        $result = app('db')->insert("INSERT INTO detail_notif (title,message,date)
-        VALUES ('$title','$message','$message')");
+        $result = app('db')->insert("INSERT INTO detail_notif (title,message,date,user)
+        VALUES ('$title','$message','$message','$user')");
         
          $input = $request->all();
     
