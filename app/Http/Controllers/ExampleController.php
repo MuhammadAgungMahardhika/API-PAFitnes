@@ -94,8 +94,8 @@ WHERE nama_fitnes LIKE '%$query%' ORDER BY nama_fitnes ASC");
           CURLOPT_POSTFIELDS =>'{
             "to":"/topics/Update"
             "notification":{
-            "title": "Succes booking class",
-            "body": "You have succesfull booking the class"
+            "title": "Update now!",
+            "body": "Click to update Pafitnes"
         }
         }',
           CURLOPT_HTTPHEADER => array(
