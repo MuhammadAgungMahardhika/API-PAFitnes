@@ -45,6 +45,20 @@ class ExampleController extends Controller
     return response()->json($results);
     }
     
+    public function saveNotif(Request $request){
+      
+        $title = $request->input('title');
+        $message = $request->input('message');
+        $date = $request->input('date');
+        
+        $result = app('db')->insert("INSERT INTO detail_notif (title,message,date)
+        VALUES ('$title','$message','$message')");
+        
+         $input = $request->all();
+    
+        return response()->json($input);
+    }
+    
      public function locationFitnes(){
       $results = app('db')->select("SELECT id_location,id_fitnes,nama_fitnes,alamat_fitnes,jam_buka,lat,lng 
 FROM location_fitnes JOIN fitnes on location_fitnes.id_fitnes = fitnes.id
