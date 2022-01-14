@@ -53,7 +53,7 @@ class ExampleController extends Controller
         $user = $request->input('user');
         
         $result = app('db')->insert("INSERT INTO detail_notif (title,message,date,user)
-        VALUES ('$title','$message','$message','$user')");
+        VALUES ('$title','$message','$date','$user')");
         
          $input = $request->all();
     
