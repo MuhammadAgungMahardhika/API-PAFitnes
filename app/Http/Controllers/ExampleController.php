@@ -95,7 +95,7 @@ WHERE nama_fitnes LIKE '%$query%' ORDER BY nama_fitnes ASC");
           CURLOPT_POSTFIELDS =>'{
             "to":"/topics/Update"
             "notification":{
-            "title": ".$title.",
+            "title": "'."$title".'",
             "body": "tes"
         }
         }',
