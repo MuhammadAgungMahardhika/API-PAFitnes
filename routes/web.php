@@ -54,6 +54,9 @@ $router->post('/postFitnes', function (Illuminate\Http\Request $request){
 //menambah booking
 $router->post('/bookFitnes','ExampleController@bookFitnes');
 
+//menambah detail_notif
+$router->post('/saveNotif','ExampleController@saveNotif');
+
 //mengambil data kelas
 $router->get('/getClass','ExampleController@getClass');
 
