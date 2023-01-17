@@ -1,4 +1,4 @@
-# Api For Android App
+# Api For Mobile PAFitnes Android App
 # Lumen PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
